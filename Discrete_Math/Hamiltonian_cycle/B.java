@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 
 /**
  * Created by Blackbird on 04.11.2016.
- * Project : Discrete_Math.Hamiltonian_cycle.B
+ * Project : Discrete_Math.Hamiltonian_cycle.Discrete_Math.Matroid.B
  * Start time : 1:22
  */
 

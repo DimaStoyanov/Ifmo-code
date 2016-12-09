@@ -1,9 +1,9 @@
-A&B|-B&A
-A&B
-A&B->A
-A&B->B
+A&Discrete_Math.Matroid.B|-Discrete_Math.Matroid.B&A
+A&Discrete_Math.Matroid.B
+A&Discrete_Math.Matroid.B->A
+A&Discrete_Math.Matroid.B->Discrete_Math.Matroid.B
 A
-B
-B->A->B&A
-A->B&A
-B&A
+Discrete_Math.Matroid.B
+Discrete_Math.Matroid.B->A->Discrete_Math.Matroid.B&A
+A->Discrete_Math.Matroid.B&A
+Discrete_Math.Matroid.B&A

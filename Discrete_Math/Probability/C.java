@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 /**
  * Created by Blackbird on 04.05.2016.
- * Project : Discrete_Math.Probability.Algorithm.LCA.C
+ * Project : Discrete_Math.Probability.Algorithm.LCA.Discrete_Math.Matroid.C
  * Start time : 1:06
  */
 

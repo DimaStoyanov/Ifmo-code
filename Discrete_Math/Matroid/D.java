@@ -50,7 +50,7 @@ public class D {
         for (int i = 1; i < powN; i++)
             if (s[i])
                 for (int j = 1; j < i; j++)
-                    if ((i & j) == j && !s[j]) // if B in A
+                    if ((i & j) == j && !s[j]) // if Discrete_Math.Matroid.B in A
                         return false;
         return true;
     }

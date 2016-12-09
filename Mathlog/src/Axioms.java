@@ -13,15 +13,15 @@ import java.util.Arrays;
 
 class Axioms {
     private final String[] axiomsStr = {
-            "A->B->A",
-            "(A->B)->(A->B->C)->(A->C)",
-            "A->B->A&B",
-            "A&B->A",
-            "A&B->B",
-            "A->A|B",
-            "B->A|B",
-            "(A->C)->(B->C)->(A|B->C)",
-            "(A->B)->(A->!B)->!A",
+            "A->Discrete_Math.Matroid.B->A",
+            "(A->Discrete_Math.Matroid.B)->(A->Discrete_Math.Matroid.B->Discrete_Math.Matroid.C)->(A->Discrete_Math.Matroid.C)",
+            "A->Discrete_Math.Matroid.B->A&Discrete_Math.Matroid.B",
+            "A&Discrete_Math.Matroid.B->A",
+            "A&Discrete_Math.Matroid.B->Discrete_Math.Matroid.B",
+            "A->A|Discrete_Math.Matroid.B",
+            "Discrete_Math.Matroid.B->A|Discrete_Math.Matroid.B",
+            "(A->Discrete_Math.Matroid.C)->(Discrete_Math.Matroid.B->Discrete_Math.Matroid.C)->(A|Discrete_Math.Matroid.B->Discrete_Math.Matroid.C)",
+            "(A->Discrete_Math.Matroid.B)->(A->!Discrete_Math.Matroid.B)->!A",
             "!!A->A"
     };
 

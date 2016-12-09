@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 
 /**
  * Created by Blackbird on 28.10.2016.
- * Project : B
+ * Project : Discrete_Math.Matroid.B
  * Start time : 2:52
  */
 

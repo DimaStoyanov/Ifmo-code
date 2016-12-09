@@ -1,6 +1,6 @@
-Задания по Algorithm.LCA.C/Algorithm.LCA.C++
+Задания по Algorithm.LCA.Discrete_Math.Matroid.C/Algorithm.LCA.Discrete_Math.Matroid.C++
 ====
-Algorithm.LCA.C tasks
+Algorithm.LCA.Discrete_Math.Matroid.C tasks
 ==
 ## task1 - таблица умножения    
 
@@ -38,7 +38,7 @@ task2 - Реализовать телефонную книжку
     ### [Решение](task2/main.c)
     
     
-Algorithm.LCA.C++ tasks
+Algorithm.LCA.Discrete_Math.Matroid.C++ tasks
 ==
 task3 - Реализовать библиотеку rational, реализующую работу с дробями
 -

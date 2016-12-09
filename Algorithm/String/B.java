@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 /**
  * Created by Blackbird on 22.05.2016.
- * Project : Algorithm.String.B
+ * Project : Algorithm.String.Discrete_Math.Matroid.B
  * Start time : 22:14
  */
 

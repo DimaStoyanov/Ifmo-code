@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 /**
  * Created by Blackbird on 04.05.2016.
- * Project : Discrete_Math.Probability.Discrete_Math.Automate.Discrete_Math.Hamiltonian_cycle.B
+ * Project : Discrete_Math.Probability.Discrete_Math.Automate.Discrete_Math.Hamiltonian_cycle.Discrete_Math.Matroid.B
  * Start time : 0:45
  */
 
