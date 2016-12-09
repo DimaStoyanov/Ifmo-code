@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Калькулятор</string>
+    <string name="result">Result</string>
+    <string name="num9">9</string>
+    <string name="opDiv">÷</string>
+    <string name="num4">4</string>
+    <string name="num5">5</string>
+    <string name="num6">6</string>
+    <string name="opMul">×</string>
+    <string name="num1">1</string>
+    <string name="num2">2</string>
+    <string name="num3">3</string>
+    <string name="opSub">-</string>
+    <string name="num0">0</string>
+    <string name="clr">C</string>
+    <string name="eqv">=</string>
+    <string name="opAdd">+</string>
+    <string name="num8">8</string>
+    <string name="num7">7</string>
+    <string name="point">.</string>
+    <string name="opDivReal">/</string>
+    <string name="opMulReal">*</string>
+    <string name="keyExpr">expression</string>
+    <string name="keyLastEqv">lastEqv</string>
+    <string name="keyInstRes">instantResult</string>
+    <string name="keyTag">Tag</string>
+    <string name="dSave">data saved</string>
+    <string name="dLoad">data restored</string>
+    <string name="maxDigitsToast">Reached the maximum number of characters - 20</string>
+</resources>
