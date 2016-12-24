@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ServiceDemoApplication</string>
+    <string name="image_description">Downloaded image</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">Service\ndisabled</string>
+    <string name="dummy_content_start">Waiting for\nbroadcast receive</string>
+    <string name="dummy_content_no_internet">No internet connection</string>
+    <string name="button_description">Start service</string>
+    <string name="start_service">Start service</string>
+    <string name="stop_service">Stop service</string>
+    <string name="save_to_gallery">Save picture to gallery</string>
+    <string name="dont_save_to_gallery">Don\'t save picture to gallery</string>
+    <string name="decoding">Decoding...</string>
+    <string name="image_service">Image service</string>
+    <string name="image_thumb">image thumb</string>
+</resources>
