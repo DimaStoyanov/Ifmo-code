@@ -5,7 +5,7 @@
 * Лабораторная по сортировкам
   *   [Условия](Sorts/sorts.pdf)
 * Лабораторная по линейным структурам
-  *   [Условия](Stack/lineal structures.pdf)
+  *   [Условия](Stack/lineal_structures.pdf)
   *   [Решения](Stack)
 * Лабораторная по деревьям
   *   [Условия](Tree/Tree.pdf)
