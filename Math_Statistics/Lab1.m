@@ -1,36 +1,31 @@
-# Лабораторная работа №1
-# Вариант 17
-# Черняков Никита
-
 clc
 clear
 
-a = 1;
-b = 5;
+l= 1;
+t0 = 1;
 
-t0 = 3;
+F = expcdf(t0, l)
 
-unif = unifcdf(t0, a, b);
-
-g = 0.95;
+g = 0.97;
 T = norminv((1 + g) / 2);
 
-n = 10 ^ 2;
+n = 10 ^ 4;
+m = 10 ^ 2;
 
-m = 100;
+y = exprnd(l, n, m);
 
-x = unifrnd(a, b, n, m);
-x1 = 0:0.05:m;
 
-rate = mean(x < t0);
+f = mean(y < t0);
 
-d1n = std(x < t0) * T / sqrt(n);
-dn = T * sqrt(rate .* (1 - rate) / n);
-Il = rate - dn;
-Ir = rate + dn;
-t = 1:1:m; 
 
-sch = sum(Il > unif) + sum(Ir < unif)
+dn = T * sqrt(f .* (1 - f) / n);
+Il = f - dn;
+Ir = f + dn;
 
-plot(t, Il, "r*-", t, Ir, "g*-", x1, unif, "b.-")
+x = 1:1:m;
+x1 = 1:0.1:m;
+
+plot(x, Il, "r.-", x, Ir, "g.-", x1, F, "b.-")
 grid
+
+l = sum(Il > F) + sum(Ir < F)
