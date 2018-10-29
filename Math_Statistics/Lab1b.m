@@ -1,10 +1,11 @@
 clc
 clear
 
-l= 1;
-t0 = 1;
+a = 0;
+b = 10;
+t0 = 6;
 
-F = expcdf(t0, l)
+F = unifcdf(t0, a, b)
 
 g = 0.97;
 T = norminv((1 + g) / 2);
@@ -12,7 +13,7 @@ T = norminv((1 + g) / 2);
 n = 10 ^ 4;
 m = 10 ^ 2;
 
-y = exprnd(l, n, m);
+y = unifrnd(a, b, n, m);
 
 
 f = mean(y < t0);
