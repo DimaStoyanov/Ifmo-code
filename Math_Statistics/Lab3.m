@@ -1,13 +1,15 @@
 clc
 clear
 
-a = 1; % их оценки Xmin Xmax
-b = 5;
+a = 1;
+b = 1;
 
 n = 10^6;
-m = n^(1/3);
-X = sort(unifrnd(a, b, n, 1));
-Y = hist(X, m)/n; % это nj
+m = 100;
+X = sort(normrnd(a, b, n, 1));
+hist(X, m)
+Y = hist(X, m) / n;
+
 h = (X(n) - X(1)) / m;
 Fn = Y/h;
 
@@ -15,16 +17,17 @@ hStep = min(X) : h : max(X);
 Fn = [Fn, Fn(end)];
 [c, d] = stairs(hStep, Fn);
 
-step = a : 0.06 : b;
-y = unifpdf(step, a, b);
+y = normpdf(hStep, a, b);
 
-%plot(step, y, "r", c, d, "b", step, 0, "g");
+% plot(c,d, "b")
+plot(hStep, y, "b", c, d, "r")
+%plot(step, y,   "r", c, d, "b", step, 0, "g");
 
 lStep = min(X) : h : max(X) - h;
-rStep = min(X) + h : h : max(X);
+rStep = min(X) + h : h : max(X);  
 
-Fl = unifcdf(lStep, a, b);
-Fr = unifcdf(rStep, a, b);
+Fl = normcdf(lStep, a, b);
+Fr = normcdf(rStep, a, b);
 
 p0 = Fr - Fl;
 
@@ -34,5 +37,4 @@ sum(p0)
 %for i = 1 : 1 : m
 %    Z(i) = X(1) + (i - 1) * h;
 %end
-
 
