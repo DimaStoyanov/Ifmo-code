@@ -6,7 +6,7 @@ n = 10^6;
 m = 100;
 
 errors = 0;
-for i = 1:10
+for i = 1:100
   
     X = sort(unifrnd(1, 2, n, 1));
     a = min(X);# mean for norm
@@ -20,9 +20,9 @@ for i = 1:10
     p = (y2 - y1);
     d = sum(((Y - n* p) .^ 2) ./ (n*p));
     kvant = chi2inv(0.95, m - 3);
-    if (d < kvant)
+    if (d >= kvant)
       errors++;
     endif
 endfor
 
-printf("First kind of error: %d\n", 1 - errors / i)
+printf("First kind of error: %d\n", errors / i)
