@@ -2,39 +2,35 @@ clc
 clear
 
 a = 1;
-b = 1;
+b = 2;
 
 n = 10^6;
 m = 100;
-X = sort(normrnd(a, b, n, 1));
+X = sort(unifrnd(a, b, n, 1));
 hist(X, m)
 Y = hist(X, m) / n;
 
 h = (X(n) - X(1)) / m;
 Fn = Y/h;
 
-hStep = min(X) : h : max(X);
+hStep = X(1) : h : X(end);
 Fn = [Fn, Fn(end)];
 [c, d] = stairs(hStep, Fn);
 
-y = normpdf(hStep, a, b);
+steps = a: 0.005 : b;
+y = unifpdf(steps, a, b);
+plot(steps, y, "b", c, d, "r", steps, 0)
 
-% plot(c,d, "b")
-plot(hStep, y, "b", c, d, "r")
-%plot(step, y,   "r", c, d, "b", step, 0, "g");
+lStep = X(1) : h : X(end) - h;
+rStep = X(1) + h : h : X(end);  
 
-lStep = min(X) : h : max(X) - h;
-rStep = min(X) + h : h : max(X);  
-
-Fl = normcdf(lStep, a, b);
-Fr = normcdf(rStep, a, b);
+Fl = unifcdf(lStep, a, b);
+Fr = unifcdf(rStep, a, b);
 
 p0 = Fr - Fl;
 
-sum(p0)
+sum = sum(p0)
 
-%Z = zeros(m, 1);
-%for i = 1 : 1 : m
-%    Z(i) = X(1) + (i - 1) * h;
-%end
+maxDiff = max(y-d')
+
 
