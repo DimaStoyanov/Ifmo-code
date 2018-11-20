@@ -5,9 +5,9 @@ clear
 function [means] =  calc (X, means_theor, medians_theor, semisums_theor)
   means = mean(X, 2);
   means_std = std(means);
+  
   medians = median(X, 2);
   medians_std = std(medians);
-
 
   varSeries = sort(X, 2);
   semisums = (varSeries(:, 1) + varSeries(:, end)) ./ 2;
@@ -28,7 +28,7 @@ ans = calc(X_norm, sigma / sqrt(n), sigma * sqrt(pi / 2 / n), 0.65 * sigma / sqr
 
 n = 10_000;
 X_norm = normrnd(a, sigma, m, n);
-ans = [ans, calc(X_norm, sigma / sqrt(n), sigma * sqrt(pi / 2 / n), 0. * sigma / sqrt(log(n)))]
+ans = [ans, calc(X_norm, sigma / sqrt(n), sigma * sqrt(pi / 2 / n), 0.65 * sigma / sqrt(log(n)))]
 
 
 
