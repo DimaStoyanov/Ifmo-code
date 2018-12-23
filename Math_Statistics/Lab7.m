@@ -36,7 +36,8 @@ a11 = polyfit(X, Y, m)
 Yn1 = polyval(a11, X);
 
 plot(X, Y, 'b', X, y, 'r', X, Yn, 'g*--', X, Yn1, 'po')
-
+legend('Function with noise', 'Unknown function', 
+'Linear regression (matrix way)','Linear regression (using octave funcs)')
 
 
 r = Yn - Y';
