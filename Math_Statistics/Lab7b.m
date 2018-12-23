@@ -21,22 +21,32 @@ Y = y + Z;
 # recovery of function y(x)
 
 # matrix way
+A = [ones(1, n); X]';
+B = A' * A;
+C = A' * Y';
+cn = B^(-1) * C;
+cn_matrix = flip(cn')
+Yn1 = A * cn;
+
+# cov way
 xn = mean(X);
 yn = mean(Y);
 K = (X - xn)' * (Y - yn) / (n - 1);
 b = K / (std(X) ^ 2);
-Yn = yn + b * (X-xn)';
+Yn2 = yn + b * (X-xn)';
 
 # using octave functions
 m = 1;
-cn = polyfit(X, Y, m)
-Yn1 = polyval(cn, X);
+cn_octave = polyfit(X, Y, m)
+Yn3 = polyval(cn_octave, X);
 
-plot(X, Y, 'b', X, y, 'r', X, Yn, 'g*--', X, Yn1, 'po')
-#plot(X, Yn, 'g', X, Yn1, 'ro', X, y, 'b')
+plot(X, Y, 'b', X, y, 'r', X, Yn1, 'g*--', X, Yn2, 'ko', X, Yn3, 'b.')
+legend('Function with noise', 'Unknown function', 
+'Linear regression (matrix way)', 'Linear regression (correlation way)', 
+'Linear regression (using octave funcs)')
 
 
-r = Yn - Y';
-ort = r' * Yn
+r = Yn1 - Y';
+ort = r' * Yn1
 sn = sqrt(r' * r / (n - 2));
 ss = [s, sn]
