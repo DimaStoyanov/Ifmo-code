@@ -31,8 +31,9 @@ Yn1 = A * cn;
 # cov way
 xn = mean(X);
 yn = mean(Y);
-K = (X - xn)' * (Y - yn) / (n - 1);
+K = (X - xn) * (Y - yn)' / (n - 1);
 b = K / (std(X) ^ 2);
+cn_cov = [b, yn - b * xn]
 Yn2 = yn + b * (X-xn)';
 
 # using octave functions
