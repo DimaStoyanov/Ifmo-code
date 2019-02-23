@@ -26,7 +26,7 @@
 	* [Отчет](Report_4Lab.docx)
 * Лабораторная работа №5
 	* Условия  
-      <img src="https://pp.userapi.com/c846020/v846020509/122229/avYha4qVDug.jpg" height="178px">
+          <img src="https://pp.userapi.com/c850732/v850732253/c5230/C399ufDEOkQ.jpg" height="178px">
 	* Пример решения  
 	  <img src="https://pp.userapi.com/c844618/v844618509/1242c0/Z9l-hX5yJCo.jpg" height="178px"> <img src="https://pp.userapi.com/c849220/v849220509/b2b91/ao5TETwbUuE.jpg" height="178px"> <img src="https://pp.userapi.com/c849220/v849220509/b2b9a/OdRYMKEj7Yw.jpg" height="178px">
 * Лабораторная работа №6
