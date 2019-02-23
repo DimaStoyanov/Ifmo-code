@@ -26,12 +26,12 @@
 	* [Отчет](Report_4Lab.docx)
 * Лабораторная работа №5
 	* Условия  
-      <img src="https://pp.userapi.com/c846020/v846020509/122229/avYha4qVDug.jpg" height="178px">
+          <img src="https://pp.userapi.com/c850732/v850732253/c5230/C399ufDEOkQ.jpg" height="178px">
 	* Пример решения  
 	  <img src="https://pp.userapi.com/c844618/v844618509/1242c0/Z9l-hX5yJCo.jpg" height="178px"> <img src="https://pp.userapi.com/c849220/v849220509/b2b91/ao5TETwbUuE.jpg" height="178px"> <img src="https://pp.userapi.com/c849220/v849220509/b2b9a/OdRYMKEj7Yw.jpg" height="178px">
 * Лабораторная работа №6
 	* Условия  
-	  <img src="https://pp.userapi.com/c849528/v849528721/afe9e/wcppjC6R_c0.jpg" height="178px"> <img src="https://pp.userapi.com/c850124/v850124721/714a2/IZO21x3DThU.jpg" height="178px">
+	  <img src="https://pp.userapi.com/c849528/v849528721/afe9e/wcppjC6R_c0.jpg" height="178px"> <img src="https://pp.userapi.com/c845419/v845419952/181829/17HuJUSLn2s.jpg" height="178px">
 	* Пример решения  
 	  <img src="https://pp.userapi.com/c851124/v851124295/6ebe0/X9suiz4mP7c.jpg" height="178px"> 
 * Лабораторная работа №7	
