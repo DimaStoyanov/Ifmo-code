@@ -1,7 +1,7 @@
 clc
 clear
 
-p = 0.1
+p = 0.3
 q = 1 - p;
 N = 4;
 
@@ -39,7 +39,7 @@ printf("  P_pract      P_theor     Delta\n")
 # Plot trajectory of wandering
 k = 20;
 x_end = zeros(k, N);
-for j = 1:k 
+for j = 1:1000
   x_path = zeros(k, 1);
   x_path(1) = round(unifrnd(2, N - 1));
   for i = 2:k
