@@ -1,82 +1,47 @@
 clc
 clear
 
-p = 0.4
+n = 8;
+p = 0.45;
 q = 1 - p;
-N = 7;
+d = zeros(n + 1, 1);
+d(1) = q;
+d(n + 1) = p;
 
+P = diag(p * ones(n, 1), 1) + diag(q * ones(n, 1), -1);
+P(1, :) = eye(1, n + 1);
+P(n + 1, :) = flip(eye(1, n + 1));
+P
 
-p_0 = zeros(N, 1);
-x = round(unifrnd(2, N - 1));
-p_0(x)=1;
+first = ceil(rand(1, 1) * (n - 1));
+P0 = zeros(1, n+1);
+P0(first+1) = 1;
+P0
 
-pp = shift(eye(N) * q, 1) + shift(eye(N) * p, -1);
-pp(1, :) = eye(1, N);
-pp(N, :) = flip(eye(1, N));
+P_lim_pract = P0 * P^100
 
+Pinf = ((q/p)^first- (q/p)^n) / (1 - (q/p)^n)
+Qinf = (1-(q/p)^first) / (1-(q/p)^n)
 
-#printf('State probability after 5 steps\n')
-k = 5;
-pp ** k;
-
-
-#printf('State probability after 20 steps\n')
-k = 20;
-pp ** k;
-
-
-#printf('State probability after 100 steps\n')
-k = 100;
-p_pract = pp ** k;
-
-p_theor_0 = zeros(N, 1);
-for x = 1:N
-  p_theor_0(x) = ((q / p) ** x - (q / p) ** (N  -1)) / (1 - (q / p) ** (N - 1));
-endfor  
-#printf("P_pract[0]  P_theor[0] Delta\n")
-[p_pract(:, 1), p_theor_0, abs(p_pract(1) - p_theor_0)];
-
-
-x_path = zeros(N, 1);
-x_path(1) = round(unifrnd(2, N - 1));
-x_path_1(1) = round(unifrnd(2, N - 1));
-yuk = zeros(N, 1)';
-yuk(x_path(1)) = 1;
-theor = (yuk * (pp ** 500))(1);
-pract = p_theor_0(x_path(1) - 1);
-[x_path(1), theor, pract]
-
-
-yuk1 = zeros(N, 1)';
-yuk1(x_path_1(1)) = 1;
-theor = (yuk1 * (pp ** 500))(1);
-pract = p_theor_0(x_path_1(1) - 1);
-[x_path_1(1), theor, pract]
-
-
-# Plot trajectory of wandering
-k = 20;
-x_end = zeros(k, N);
-count_markov = 10000;
-for j = 1:count_markov
-  x_path = zeros(k, 1);
-  x_path(1) = round(unifrnd(2, N - 1));
-  for i = 2:k
-    state = zeros(N, 1)';
-    state(x_path(i - 1)) = 
-    if x_path(i - 1) == 1 || x_path(i - 1) == N
-      x_path(i) = x_path(i - 1);
-    else
-      x_path(i) = (x_path(i - 1) + 1) * (rnd < p) + (x_path(i - 1) - 1) * (rnd >= p);
-    endif
-    x_end(i, x_path(i)) += 1;
-  endfor
+for i=1:100
+  Pd(i,:) = P0 * P^(10+3*i);
 endfor
-x_end /= count_markov;
+figure(1)
+plot(Pd), grid
 
-
-plot(x_path, '--*')
-
-figure
-plot(2:k, x_end(2:end, :))
-
+steps = 100;
+path(1) = first;
+for i=2:steps
+  if(path(i-1) == 0 || path(i -1) == n)
+    path(i) = path(i -1);
+   else
+    if(rand() > p)
+      path(i) = path(i - 1) - 1;
+    else
+      path(i) = path(i - 1) + 1;
+    endif
+   endif
+endfor
+i = 1:1:steps;
+figure(2)
+plot(i, path, '-*', i, 0, i, n)
