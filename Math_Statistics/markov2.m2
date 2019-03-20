@@ -1,64 +1,46 @@
 clc
 clear
 
-p = 0.3
+n = 8;
+p = 0.6;
 q = 1 - p;
-N = 4;
+d = zeros(n + 1, 1);
+d(1) = q;
+d(n + 1) = p;
 
-pp = shift(eye(N) * q, 1) + shift(eye(N) * p, -1);
-pp(1, : ) = zeros(1, N);
-pp(1, 1) = q;
-pp(1, 2) = p;
-pp(N, :) = zeros(1, N);
-pp(N, N - 1) = q;
-pp(N, N) = p;
+P = diag(p * ones(n, 1), 1) + diag(q * ones(n, 1), -1) + diag(d)
 
+first = ceil(rand(1, 1) * (n - 1));
+P0 = zeros(1, n+1);
+P0(first+1) = 1;
+P0
 
-printf('State probability after 5 steps\n')
-k = 5;
-pp ** k
+P_lim_pract = P0 * P^120
 
-
-printf('State probability after 20 steps\n')
-k = 20;
-pp ** k
-
-
-printf('State probability after 100 steps\n')
-k = 100;
-p_pract = pp ** k
-
-p_theor = zeros(N, 1);
-for i = 1:N
-  p_theor(i) = (p / q) ** (i - 1) * (1 - p / q ) / (1 - (p / q) ** (N + 1));
-endfor  
-printf("  P_pract      P_theor     Delta\n")
-[mean(p_pract)', p_theor, abs(mean(p_pract)' - p_theor)]
-
-
-# Plot trajectory of wandering
-k = 20;
-x_end = zeros(k, N);
-for j = 1:1000
-  x_path = zeros(k, 1);
-  x_path(1) = round(unifrnd(2, N - 1));
-  for i = 2:k
-    rnd = unifrnd(0, 1);
-    if x_path(i - 1) == 1
-      x_path(i) = (rnd < p) * 2 + (rnd >= p) * 1;
-    elseif x_path(i - 1) == N
-      x_path(i) = (rnd < p) * N + (rnd >= p) * (N - 1);
-    else
-      x_path(i) = (x_path(i - 1) + 1) * (rnd < p) + (x_path(i - 1) - 1) * (rnd >= p);
-    endif
-    x_end(i, x_path(i)) += 1;
-  endfor
+for i=1:n+1
+  P_lim_theor(i)= (1-p/q) * (p/q) ^ (i-1) / (1-(p/q)^(n+1));
 endfor
-x_end /= k;
+P_lim_theor
 
+for i=1:100
+  Pd(i,:) = P0 * P^(10+1*i);
+endfor
+figure(1)
+plot(Pd), grid
 
-plot(x_path, '--*')
-
-figure
-plot(1:k, x_end)
-
+steps = 100;
+path(1) = first;
+for i=2:steps
+  if(rand() > p)
+     if(path(i-1) == 0) path(i) = path(i -1);
+     else path(i) = path(i - 1) - 1;
+     endif
+  else
+     if(path(i - 1) == n) path(i) = path(i - 1);
+     else path(i) = path(i - 1) + 1;
+   endif
+  endif
+endfor
+i = 1:1:steps;
+figure(2)
+plot(i, path, '-*', i, 0, i, n)
