@@ -17,6 +17,6 @@
 * **[Оперционные системы (3 cеместр)](os)**
 * **[Парадигмы программирования (4 семестр)](Haskell)**
 * **[Специальный семинар (4 семестр)](https://github.com/DimaStoyanov/dimastoyanov.github.io)**
-* **[Математическая статистика (7 семестр)](Math_Statistics)**  
+* **[Математическая статистика (7-8 семестр)](Math_Statistics)**  
 
 #### [Google Drive](https://drive.google.com/drive/folders/0BxK3KtS-7wpBWDY5Z0NzUVVpSms?usp=sharing)
