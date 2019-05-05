@@ -62,14 +62,14 @@
 	
 ### 8 семестр
 <details>
-	<summary><b>Лабараторная работа по блужданиям на прямой</b></summary>
+	<summary><b>Лабораторная работа по блужданиям на прямой</b></summary>
 <p><a href="https://vk.com/enf_vm_2015?w=wall-99588995_578%2Fall">Условия</a></p>
 <p><a href="https://github.com/DimaStoyanov/Ifmo-code/blob/master/Math_Statistics/markov.m">Решение (отражение)</a></p>
 <p><a href="https://github.com/DimaStoyanov/Ifmo-code/blob/master/Math_Statistics/markov2.m">Решение (поглощение)</a></p>
 <p><a href="https://github.com/DimaStoyanov/Ifmo-code/blob/master/Math_Statistics/markov_matrix.m">Решение (матричный метод)</a></p>
 </details>
 <details>
-	<summary><b>Лабараторная работа по СМО</b></summary>
+	<summary><b>Лабораторная работа по СМО</b></summary>
 <p><a href="https://vk.com/doc220165560_495455288?hash=e0be61b6436ad42fec&dl=d8f778d04b0d12275f">Условие</a></p>
 <p><a href="https://github.com/DimaStoyanov/Ifmo-code/blob/master/Math_Statistics/queue_open.m">Решение (открытая система)</a></p>
 <p><a href="https://github.com/DimaStoyanov/Ifmo-code/blob/master/Math_Statistics/queue_close.m">Решение (амкнутая система)</a></p>
